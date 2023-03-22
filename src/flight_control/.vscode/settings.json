@@ -1,0 +1,8 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/zxh0916/px4_ros_com_ros2/install/px4_msgs/lib/python3.8/site-packages",
+        "/home/zxh0916/zxh_ws/install/test_py/lib/python3.8/site-packages",
+        "/home/zxh0916/zxh_ws/install/simple_control/lib/python3.8/site-packages",
+        "/opt/ros/galactic/lib/python3.8/site-packages"
+    ]
+}
