@@ -1,8 +1,6 @@
 # Drone Rescue Project
 储存大创项目所用的ROS C++代码
 
-[TOC]
-
 ## 使用方法
 ### 下载并编译
 ```bash
@@ -42,5 +40,5 @@ sudo chmod 777 ~/QGroundControl.AppImage
 #### 第四个终端：启动ROS节点
 ```bash
 source ~/drone_rescue/devel/setup.bash
-rosrun rosrun phone_finder find_the_phone
+rosrun phone_finder find_the_phone
 ```
