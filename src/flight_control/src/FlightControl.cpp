@@ -15,6 +15,7 @@ FlightControlNode::FlightControlNode(){
         ("mavros/set_mode");
 }
 
+// 里程计回调函数，更新当前无人机的位置和线速度
 void FlightControlNode::odom_cb(
     const nav_msgs::Odometry::ConstPtr &msg,
     FlightControlNode *node){
@@ -27,12 +28,14 @@ void FlightControlNode::odom_cb(
     return;
 }
 
+// 状态回调函数，记录无人机控制状态等信息
 void FlightControlNode::state_cb(
     const mavros_msgs::State::ConstPtr& msg,
     FlightControlNode *node){
     node->current_state = *msg;
 }
 
+// 定点飞行函数
 void FlightControlNode::set_pos(double x, double y, double z){
     geometry_msgs::PoseStamped msg;
     msg.pose.position.x = x;
@@ -43,6 +46,7 @@ void FlightControlNode::set_pos(double x, double y, double z){
     return;
 }
 
+// 定点飞行函数
 void FlightControlNode::set_pos(const Point& pos){
     geometry_msgs::PoseStamped msg;
     msg.pose.position.x = pos.x;
@@ -53,6 +57,7 @@ void FlightControlNode::set_pos(const Point& pos){
     return;
 }
 
+// 定速飞行函数
 void FlightControlNode::set_vel(double vx, double vy, double vz){
     geometry_msgs::TwistStamped msg;
     msg.twist.linear.x = vx;
@@ -63,6 +68,7 @@ void FlightControlNode::set_vel(double vx, double vy, double vz){
     return;
 }
 
+// 定速飞行函数
 void FlightControlNode::set_vel(const Point& vel){
     geometry_msgs::TwistStamped msg;
     msg.twist.linear.x = vel.x;
@@ -93,7 +99,6 @@ bool FlightControlNode::set_mode(std::string mode="OFFBOARD"){
 
 int main(int argc, char **argv)
 {
-    
     ros::init(argc, argv, "offb_node");
     FlightControlNode node;
     

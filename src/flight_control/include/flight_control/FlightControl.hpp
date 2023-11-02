@@ -11,6 +11,7 @@
 #include <deque>
 #include <boost/bind.hpp>
 
+// 存储空间三坐标位置的数据结构
 struct Point{
     double x, y, z;
     Point(): x(0), y(0), z(0) {}
