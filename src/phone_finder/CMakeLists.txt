@@ -108,7 +108,7 @@ catkin_package(
  INCLUDE_DIRS include
  LIBRARIES phone_finder
  CATKIN_DEPENDS flight_control geometry_msgs mavros_msgs roscpp std_msgs
- DEPENDS system_lib
+#  DEPENDS system_lib
 )
 
 ###########
