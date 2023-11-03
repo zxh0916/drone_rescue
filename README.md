@@ -19,7 +19,7 @@ sudo apt-get install ros-${ROS_DISTRO}-mavros ros-${ROS_DISTRO}-mavros-extras ro
 wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
 sudo bash ./install_geographiclib_datasets.sh
 ```
-
+##### 运行MAVROS
 ```bash
 roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
