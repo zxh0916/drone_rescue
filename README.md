@@ -10,9 +10,18 @@ cd drone_rescue
 catkin build
 ```
 ### 运行
-#### 第一个终端：打开roscore和mavros
+#### 第一个终端：打开roscore和MAVROS
+##### 安装MAVROS
+根据[px4官方安装教程](https://docs.px4.io/main/en/ros/mavros_installation.html)：
 ```bash
-roslaunch mavros px4.launch fcu_url:=\"udp://:14540@127.0.0.1:14557\"
+sudo apt-get updat
+sudo apt-get install ros-${ROS_DISTRO}-mavros ros-${ROS_DISTRO}-mavros-extras ros-${ROS_DISTRO}-mavros-msgs
+wget https://raw.githubusercontent.com/mavlink/mavros/master/mavros/scripts/install_geographiclib_datasets.sh
+sudo bash ./install_geographiclib_datasets.sh
+```
+
+```bash
+roslaunch mavros px4.launch fcu_url:="udp://:14540@127.0.0.1:14557"
 ```
 #### 第二个终端：启动gazebo仿真
 ```bash
