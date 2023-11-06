@@ -95,14 +95,19 @@ class Target{
             Point pos;
             vd mse; // 平均误差平方
             mse.clear();
-            // 用与目标距离最近的采样点位置初始化目标位置
+            // 用与最后一次解出的目标位置初始化本次目标位置
             double dist = 1e10;
             int init_id = -1;
-            for (int i = 0; i < distances.size(); i++){
-                if (distances[i] < dist){
-                    pos = sampled_positions[i];
-                    dist = distances[i];
-                    init_id = i;
+            if (solutions.queue.size() > 0){
+                pos = solutions.queue.back();
+            }
+            else{
+                for (int i = 0; i < distances.size(); i++){
+                    if (distances[i] < dist){
+                        pos = sampled_positions[i];
+                        dist = distances[i];
+                        init_id = i;
+                    }
                 }
             }
             // 运行梯度下降法
