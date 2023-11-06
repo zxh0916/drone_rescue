@@ -64,6 +64,8 @@
   <exec_depend>mavros_msgs</exec_depend>
   <exec_depend>roscpp</exec_depend>
   <exec_depend>std_msgs</exec_depend>
+  <build_depend>nlink_parser</build_depend>
+  <exec_depend>nlink_parser</exec_depend>
 
 
   <!-- The export tag contains other, unspecified, tags -->

@@ -3,10 +3,18 @@
 
 ## 使用方法
 ### 下载并编译
+#### 下载源码
 ```bash
 cd ~
 git clone https://github.com/zxh0916/drone_rescue.git
 cd drone_rescue
+```
+#### 安装nlink_parser
+```bash
+git clone --recursive https://github.com/nooploop-dev/nlink_parser.git
+```
+#### 编译
+```bash
 catkin build
 ```
 ### 运行
@@ -49,5 +57,5 @@ sudo chmod 777 ~/QGroundControl.AppImage
 #### 第四个终端：启动ROS节点
 ```bash
 source ~/drone_rescue/devel/setup.bash
-rosrun phone_finder find_the_phone
+rosrun phone_finder find_the_phone_simulation
 ```

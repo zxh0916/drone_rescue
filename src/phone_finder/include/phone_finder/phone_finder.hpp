@@ -121,7 +121,7 @@ class Target{
                 // cout << grad.x << " " << grad.y << " " << grad.z << endl;
                 pos -= grad * step_len;
             }
-            bool success = mse.back() < mse[0] / 5.;
+            bool success = mse.back() < mse[0] / 2.;
             if (success){
                 solutions.update(pos);
             }
